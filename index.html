@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="src/icon.png">
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      a {
+        animation: bounce 1s ease infinite;
+      }
+
+      a:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#212121] text-[#E5E5E5] flex flex-col items-center justify-center min-h-screen font-[Poppins]"
+  >
+    <div class="mb-6">
+      <label for="difficulty" class="text-[#E5E5E5] mr-4">Select Mode:</label>
+      <select
+        id="difficulty"
+        class="bg-[#333333] border border-[#444444] text-[#E5E5E5] rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-[#24A16B]"
+      >
+        <option value="human">Player vs Player</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="impossible">Impossible</option>
+      </select>
+    </div>
+
+    <div
+      id="score-card"
+      class="bg-[#333333] text-[#E5E5E5] p-4 rounded-md shadow-md w-64 mb-4"
+    >
+      <h2 class="text-lg font-bold text-center mb-4">Score</h2>
+      <div class="flex justify-between">
+        <div class="text-center">
+          <h3 class="font-medium">Player 1</h3>
+          <p id="player1-score" class="text-2xl font-bold">0</p>
+        </div>
+        <div class="text-center">
+          <h3 id="player2-label" class="font-medium">Player 2</h3>
+          <p id="player2-score" class="text-2xl font-bold">0</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="status" class="text-lg font-bold mb-4"></div>
+
+    <div id="board" class="grid grid-cols-3 gap-4 w-64">
+      <!-- cells -->
+      <div
+        class="cell w-20 h-20 flex items-center justify-center bg-[#333333] rounded-md shadow-md cursor-pointer hover:bg-[#444444] focus:ring-2 focus:ring-[#24A16B] transition"
+      ></div>
+      <div
+        class="cell w-20 h-20 flex items-center justify-center bg-[#333333] rounded-md shadow-md cursor-pointer hover:bg-[#444444] focus:ring-2 focus:ring-[#24A16B] transition"
+      ></div>
+      <div
+        class="cell w-20 h-20 flex items-center justify-center bg-[#333333] rounded-md shadow-md cursor-pointer hover:bg-[#444444] focus:ring-2 focus:ring-[#24A16B] transition"
+      ></div>
+      <div
+        class="cell w-20 h-20 flex items-center justify-center bg-[#333333] rounded-md shadow-md cursor-pointer hover:bg-[#444444] focus:ring-2 focus:ring-[#24A16B] transition"
+      ></div>
+      <div
+        class="cell w-20 h-20 flex items-center justify-center bg-[#333333] rounded-md shadow-md cursor-pointer hover:bg-[#444444] focus:ring-2 focus:ring-[#24A16B] transition"
+      ></div>
+      <div
+        class="cell w-20 h-20 flex items-center justify-center bg-[#333333] rounded-md shadow-md cursor-pointer hover:bg-[#444444] focus:ring-2 focus:ring-[#24A16B] transition"
+      ></div>
+      <div
+        class="cell w-20 h-20 flex items-center justify-center bg-[#333333] rounded-md shadow-md cursor-pointer hover:bg-[#444444] focus:ring-2 focus:ring-[#24A16B] transition"
+      ></div>
+      <div
+        class="cell w-20 h-20 flex items-center justify-center bg-[#333333] rounded-md shadow-md cursor-pointer hover:bg-[#444444] focus:ring-2 focus:ring-[#24A16B] transition"
+      ></div>
+      <div
+        class="cell w-20 h-20 flex items-center justify-center bg-[#333333] rounded-md shadow-md cursor-pointer hover:bg-[#444444] focus:ring-2 focus:ring-[#24A16B] transition"
+      ></div>
+    </div>
+
+    <button
+      id="restart"
+      class="mt-6 px-6 py-2 bg-[#24A16B] rounded-md shadow-md text-[#E5E5E5] hover:bg-[#1e8a56] focus:ring-2 focus:ring-[#24A16B] transition"
+    >
+      Restart
+    </button>
+    <a
+        href="https://github.com/MrOrdenador"
+        target="_blank"
+        class="fixed bottom-3 right-3 bg-111827 text-white p-3 w-12 h-12 rounded-full flex items-center justify-center hover:bg-[#333333]"
+      >
+        <i class="fab fa-github text-xl"></i>
+      </a>
+    <script src="script.js"></script>
+  </body>
+</html>
